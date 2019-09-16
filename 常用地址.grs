@@ -1,0 +1,216 @@
+F:\\WUBO\\85\\TEMP2.macro
+D:\\Open_WB\\test-75.macro
+
+D:\Open_WB\application\DLL
+C:\Program Files (x86)\Siemens\NX 8.5\UGOPEN
+C:\Program Files (x86)\Siemens\NX 8.5\UGII\ugraf.exe
+C:\Program Files\Siemens\NX 12.0\UGOPEN
+C:\Program Files\Siemens\NX 12.0\NXBIN\ugraf.exe
+C:\Program Files\Siemens\NX 11.0\UGOPEN
+C:\Program Files\UGS\NX 7.5\UGOPEN
+C:\Program Files (x86)\UGS\NX 7.5\UGOPEN
+C:\Program Files (x86)\UGS\NX 7.5\UGII\ugraf.exe
+C:\Program Files\Siemens\NX 8.5\UGOPEN
+C:\Program Files (x86)\Siemens\NX 8.5\UGOPEN
+C:\Program Files\Siemens\NX1872\UGOPEN
+_SECURE_SCL=0;_USRDLL;%(PreprocessorDefinitions)
+
+C:\\Program Files\\Siemens\\NX 11.0\\UGII\\libugui.dll
+C:\\Program Files (x86)\\Siemens\\NX 8.5\\UGII\\libugui.dll
+G:\\NX 8.5-64\\UGII\\libugui.dll
+C:\\Program Files\\Siemens\\NX 11.0\\NXBIN\\libugui.dll
+G:\\Program Files\\UGS\\NX 7.5\\UGII\\libugui.dll
+
+C:\Program Files (x86)\Windows Kits\8.0\Lib\win8\um\x64\user32.lib
+
+G:\NX 8.5-64\UGOPEN\vs_files
+C:\Program Files (x86)\Microsoft Visual Studio 11.0
+VC\vcprojects\NX10_Open.vsz
+G:\NX 8.5-64\UGOPEN\
+D:\Open_WB\application\DLL\ID_CHANGE.bmp
+D:\\Open_WB\\application\\DLL\\ID_CHANGE.bmp
+D://Open_WB//application//DLL//ID_CHANGE.bmp
+←↑↓→↓↖↙↗↘?箭头符号  √ (?_?)?☆★
+
+color: 6,11,36,108,31,103,211,164,125,181
+
+UpdateData(true);
+
+UpdateData(false);
+
+
+MASK/3,5,6,9,14,
+
+C:\Program Files (x86)\UGS\batch program
+D:\Open_WB
+
+
+MESSG/'HELLO NXOPEN!'
+uc1601("HELLO NXOPEN!", 1);
+sprintf(opername, "%d", NC_CS);
+uc1601(opername, 1);
+sprintf(wb_s1, "tp_line_info[wb_i][wb_k][3]:%f", tp_line_info[wb_i][wb_k][3]);
+uc1601(wb_s1, 1);
+$$MESSG/'THE WB_NT1:' + FSTRL(WB_NT1(1)) + ',' + FSTRL(WB_NT1(2))$
+$$ + ',' + FSTRL(WB_NT1(3))
+	WB_T1 = &TYPE(WB_TEMP(wb_i))
+	WB_T2 = &SUBTYP(WB_TEMP(wb_i))
+	MESSG/'THE TYPE:' + ISTRL(WB_T1) + 'SUBTYPE:' + ISTRL(WB_T2)
+
+UF_OBJ_ask_type_and_subtype(wb_tag, &wb_type, &wb_subtype);
+sprintf(wb_s1, "the type:%d,the subtype:%d", wb_type, wb_subtype);
+uc1601(wb_s1, 1);
+
+	//如果是64位的自己修改下宏函数名就行
+//32位调宏函数名：?MACRO_playback_from_usertool@@YAXPBD@Z
+//64位调宏函数名：?MACRO_playback_from_usertool@@YAXPEBD@Z
+
+//API调用UG的宏
+ typedef void (*load_ufusr_f_p_t)(char* param, int* retcode, int paramLen);
+ load_ufusr_f_p_t load_ufusr_ptr = NULL;
+ 
+  int retcode;
+ load_ufusr_ptr("F:\\WUBO\\85\\TEMP2.macro", &retcode, 1);
+ char* file_path = "C:\\Program Files (x86)\\Siemens\\NX 8.5\\UGII\\libugui.dll";
+ 
+
+UF_load_library (file_path, "?MACRO_playback_from_usertool@@YAXPEBD@Z", (UF_load_f_p_t *) & load_ufusr_ptr);
+ 
+ if (load_ufusr_ptr != NULL)
+ {
+  load_ufusr_ptr("F:\\WUBO\\85\\TEMP2.macro", &retcode, 1);
+ }
+
+3C-46-D8-14-FC-F4
+F4-14-FC-46-D8-3C
+56ff73242fc515f20087287eca3ba3d9
+
+B8-97-5A-FC-C5-7C
+7C-FC-C5-97-5A-B8
+48a316c2e87295bfb3b2113aaea69140
+201704
+37ca26a87852ae801d56debf21fbc261
+2017061
+eba1e29419569c1a2dedc1876ef5c001
+2017062
+4ca0619dea99e734298332d15cacd9b0
+
+
+		WB_S1 = ISTRL(NC_ALL) + '-' + ISTRL(WB_D2)
+		CHOOSE/'STOP','YES','NO',DEFLT,1,ALTACT,WB_S1,RESP
+		JUMP/,END:,,,,,RESP
+
+
+	FILE *fp;
+	char strLine[MAX_LINE];                             //读取缓冲区  
+	if ((fp = fopen("D:\\config.ini", "r")) == NULL)      //判断文件是否存在及可读  
+	{
+		printf("Open Falied!");
+		return -1;
+	}
+	while (!feof(fp))                                   //循环读取每一行，直到文件尾  
+	{
+		fgets(strLine, MAX_LINE, fp);                     //将fp所指向的文件一行内容读到strLine缓冲区  
+		printf("%s", strLine);                          //输出所读到的内容  
+														//DO SOMETHING ELSE  
+	}
+	fclose(fp);                                         //关闭文件  
+
+创新中心-2019年9月7日工作周报
+项目进度的反馈    
+   汇报目前手头的工作进度，更新本周工作日程及技术列表，然后汇总后反馈给洪总及曾总。
+    本周主要工作：  
+    
+    1、自动法向坐标-调研结束，开始架构设计
+
+    2、本周主要开展智能编程在子程序原刀路的应用
+        过去基模组开始测试基模原刀路智能编程，合同S1901213、S1901214
+		
+    3、基模原刀路智能编程，根据测试调整
+
+    4、过去车间测试马扎克I700后处理，伟淳反馈马扎克结构跟斗山五轴机床结构和系统相似，采用斗山五轴后处理修改后在马扎克机床上测试成功，改变原有坐标设置方式，接下来准备测试圆加工，效果达标的话，可以替换原有两种后处理的情况
+        过去车间测试马扎克I700后处理，测试圆加工完成，效果达标，由伟淳将修改好的后处理发送给侧板组使用
+        和伟淳到基模组测试V500机床程序，该机床与马扎克I700机床结构相似，看是否可以采用相同的后处理，同时测试看是否新后处理能改善V500的加工效果，之前有反馈V500的加工效果一般
+        由伟淳将修改好的V500后处理出测试圆加工的程序，待加工后反馈效果
+		
+已完成项目部署及维护的反馈：
+    
+    1、工程中心的“柯达斯”反馈要加工侧板深孔钻，让他过来这边办公室看是否合适
+        达斯反馈可以测试看，过来办公室学生如何使用侧板深孔钻软件，并交代合同加工后反馈加工效果
+
+    2、工程中心的焕维反馈有好几个二次开发是关于编程部分的，如钢片刀路的更新，刀轴坐标系的摆放，这些二次开发很好运用到编程里面，需要申请为办公室所有人员开通这些功能，请示了曾总后为他们开通权限
+        开通人员名单：曾波   江淑龙   林一帆  陈隆生  吴奕锋  江宇  吴鸿   黄少沛   吴正敏  吴锐佳  张金龙  李焕维  郑景丰  柯达斯 
+
+假设ug安装目录 D:\Program Files\NX10.0
+假设VS安装目录 D:\Program Files\Microsoft Visual Studio 11.0
+
+ 1.2、拷贝D:\Program Files\NX10.0\UGOPEN\vs_files\ VC、VC#、VB 3个文件夹
+      到 D:\Program Files\Microsoft Visual Studio 11.0 覆盖文件
+
+ 1.3、匹配NX对VS的版本的默认设置  
+      修改D:\Program Files\Microsoft Visual Studio 11.0\VC\vcprojects\NX10_Open.vsz
+                                  其它版本同理比如修改 NX10_Open.vsz
+
+如果是vs2015版本支持是15 修改为“Wizard=VsWizard.VsWizardEngine.14.0”
+如果是vs2012版本支持是10 修改为“Wizard=VsWizard.VsWizardEngine.11.0”
+如果是vs2010版本支持是10 修改为“Wizard=VsWizard.VsWizardEngine.10.0”
+如果是vs2008版本支持是9  修改为“Wizard=VsWizard.VsWizardEngine.9.0”
+如果是vs2005版本支持是8  修改为“Wizard=VsWizard.VsWizardEngine.8.0”
+
+python manage.py runserver 80
+
+7.5---------------------------------------------
+libufun.lib
+libnxopencpp.lib
+libugopenint.lib
+libnxopenuicpp.lib
+7.5---------------------------------------------
+
+libufun.lib
+libugopenint.lib 
+libnxopencpp.lib
+libnxopenuicpp.lib   
+libnxopencpp_features.lib
+
+
+
+libufun.lib
+libnxopencpp.lib
+libnxopencpp_annotations.lib
+libnxopencpp_assemblies.lib
+libnxopencpp_bodydes.lib
+libnxopencpp_cae.lib
+libnxopencpp_cam.lib
+libnxopencpp_die.lib
+libnxopencpp_display.lib
+libnxopencpp_drafting.lib
+libnxopencpp_drawings.lib
+libnxopencpp_facet.lib
+libnxopencpp_features.lib
+libnxopencpp_fields.lib
+libnxopencpp_formboard.lib
+libnxopencpp_gateway.lib
+libnxopencpp_geometricanalysis.lib
+libnxopencpp_geometricutilities.lib
+libnxopencpp_issue.lib
+libnxopencpp_layer.lib
+libnxopencpp_mechatronics.lib
+libnxopencpp_modldirect.lib
+libnxopencpp_motion.lib
+libnxopencpp_optimization.lib
+libnxopencpp_options.lib
+libnxopencpp_pdm.lib
+libnxopencpp_physmat.lib
+libnxopencpp_positioning.lib
+libnxopencpp_preferences.lib
+libnxopencpp_routing.lib
+libnxopencpp_shapesearch.lib
+libnxopencpp_sheetmetal.lib
+libnxopencpp_sim.lib
+libnxopencpp_tooling.lib
+libnxopencpp_userdefinedobjects.lib
+libnxopencpp_validate.lib
+libnxopencpp_visualreporting.lib
+libnxopencpp_weld.lib
+libugopenint.lib
+libnxopenuicpp.lib
